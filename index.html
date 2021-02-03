@@ -18,50 +18,54 @@
   </head>
   <body class="fade-in">
     <a href="https://github.com/launch-io/launch.io" class="logo"><img src="./images/logo-small.png" alt="Launch.IO" /></a>
-    <h2>A Time Traveling React State Management Library.</h2>
-    <p>Ultra Hip. Ultra Simple. Ultra Tiny. Ultra Fast.</p>
+    <h2 class="header">A Time Traveling React State Management Library.</h2>
+    <p class="tagline">Ultra Hip. Ultra Simple. Ultra Tiny. Ultra Fast.</p>
     <ul class="nav">
       <li class="nav-link">
         <a href="https://github.com/launch-io/launch.io">Get Started</a>
       </li>
     </ul>
-    <pre><code class="language-shell">npm install launch.io</code></pre>
-    <pre><code class="language-javascript">
-    import React from "react";
-    import ReactDOM from 'react-dom';
-    import { initializeLaunch, useLaunch } from "launch.io";
+    <div class="code-block">
+      <article>
+<pre><code class="language-shell">npm install launch.io</code></pre>
+<pre><code class="language-javascript">
+import React from "react";
+import ReactDOM from 'react-dom';
+import { initializeLaunch, useLaunch } from "launch.io";
 
-    const calculatorService = {
-      name: "calculator",
-      initialState: {
-        value: 0,
-      },
-      actions: {
-        increase: ({ state }) => ({ value: state.value + 1 }),
-        decrease: ({ state }) => ({ value: state.value - 1 }),
-      },
-    };
+const calculatorService = {
+  name: "calculator",
+  initialState: {
+    value: 0,
+  },
+  actions: {
+    increase: ({ state }) => ({ value: state.value + 1 }),
+    decrease: ({ state }) => ({ value: state.value - 1 }),
+  },
+};
 
-    initializeLaunch([calculatorService], { enableTimeTravel: true });
+initializeLaunch([calculatorService], { enableTimeTravel: true });
 
-    const CalculatorForm = () => {
-      const state = useLaunch(({ state }) => state.calculator);
-      const actions = useLaunch(({ actions }) => actions.calculator);
-    
-      return (
-        &#x3C;div>
-          &#x3C;p>Value: {state.value}&#x3C;/p>
-          &#x3C;button type="button" onClick={() => actions.increase()}>
-            Increase
-          &#x3C;/button>
-            &#x3C;button type="button" onClick={() => actions.decrease()}>
-            Decrease
-          &#x3C;/button>
-        &#x3C;/div>
-      );
-    };
+const CalculatorForm = () => {
+  const state = useLaunch(({ state }) => state.calculator);
+  const actions = useLaunch(({ actions }) => actions.calculator);
 
-    ReactDOM.render(&#x3C;CalculatorForm />, document.getElementById('app'));
-    </code></pre>
+  return (
+    &#x3C;div>
+      &#x3C;p>Value: {state.value}&#x3C;/p>
+      &#x3C;button type="button" onClick={() => actions.increase()}>
+        Increase
+      &#x3C;/button>
+        &#x3C;button type="button" onClick={() => actions.decrease()}>
+        Decrease
+      &#x3C;/button>
+    &#x3C;/div>
+  );
+};
+
+ReactDOM.render(&#x3C;CalculatorForm />, document.getElementById('app'));
+</code></pre>
+      </article>
+    </div>
   </body>
 </html>

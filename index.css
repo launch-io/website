@@ -1,3 +1,10 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  position: relative;
+}
+
 body,
 html {
   color: #751c7c;
@@ -10,6 +17,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.header,
+.tagline {
+  text-align: center;
 }
 
 .fade-in {
@@ -58,4 +70,15 @@ body {
   display: inline-block;
   text-decoration: none;
   color: #751c7c;
+}
+
+.code-block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+article {
+  overflow: auto;
+  width: 800px;
 }
