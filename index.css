@@ -24,6 +24,11 @@ body {
   text-align: center;
 }
 
+.asterisk {
+  font-size: 0.75em;
+  text-align: center;
+}
+
 .fade-in {
   opacity: 1;
   animation-name: fadeInOpacity;
@@ -57,8 +62,13 @@ body {
   text-transform: uppercase;
 }
 
-.nav-link:hover {
-  font-weight: bold;
+.nav:hover {
+  cursor: pointer;
+  background-color: #751c7c;
+}
+
+.nav:hover a {
+  color: white;
 }
 
 .nav-link {
@@ -78,7 +88,7 @@ body {
   justify-content: center;
 }
 
-article {
+.code {
   overflow: auto;
   width: 800px;
 }
