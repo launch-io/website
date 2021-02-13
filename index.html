@@ -39,14 +39,15 @@ const calculatorService = {
     value: 0,
   },
   actions: {
-    increase: ({ state }) => ({ value: state.value + 1 }),
-    decrease: ({ state }) => ({ value: state.value - 1 }),
+    increase: ({ state }, payload) => ({ value: state.value + payload }),
+    decrease: ({ state }, payload) => ({ value: state.value - payload }),
   },
 };
 
 initializeLaunch([calculatorService], { enableTimeTravel: true });
 
 const CalculatorForm = () => {
+  const calculatorStep = 2;
   const state = useLaunch(({ state }) => state.calculator);
   const actions = useLaunch(({ actions }) => actions.calculator);
   const historyActions = useLaunch(({ actions }) => actions._history);
@@ -54,10 +55,10 @@ const CalculatorForm = () => {
   return (
     &#x3C;div>
       &#x3C;p>Value: {state.value}&#x3C;/p>
-      &#x3C;button type="button" onClick={() => actions.increase()}>
+      &#x3C;button type="button" onClick={() => actions.increase(calculatorStep)}>
         Increase
       &#x3C;/button>
-        &#x3C;button type="button" onClick={() => actions.decrease()}>
+        &#x3C;button type="button" onClick={() => actions.decrease(calculatorStep)}>
         Decrease
       &#x3C;/button>
       &#x3C;button type="button" onClick={() => historyActions.stepBack()}>
