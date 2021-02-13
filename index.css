@@ -72,11 +72,11 @@ body {
 }
 
 .nav-link {
-  padding: 0.5em;
   border: 2px solid #751c7c;
 }
 
 .nav-link > a {
+  padding: 0.5em;
   display: inline-block;
   text-decoration: none;
   color: #751c7c;
