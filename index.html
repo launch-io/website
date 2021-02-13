@@ -49,6 +49,7 @@ initializeLaunch([calculatorService], { enableTimeTravel: true });
 const CalculatorForm = () => {
   const state = useLaunch(({ state }) => state.calculator);
   const actions = useLaunch(({ actions }) => actions.calculator);
+  const historyActions = useLaunch(({ actions }) => actions._history);
 
   return (
     &#x3C;div>
@@ -58,6 +59,12 @@ const CalculatorForm = () => {
       &#x3C;/button>
         &#x3C;button type="button" onClick={() => actions.decrease()}>
         Decrease
+      &#x3C;/button>
+      &#x3C;button type="button" onClick={() => historyActions.stepBack()}>
+        Rewind Time
+      &#x3C;/button>
+      &#x3C;button type="button" onClick={() => historyActions.stepForward()}>
+        Fast Forward Time
       &#x3C;/button>
     &#x3C;/div>
   );
