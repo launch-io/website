@@ -51,7 +51,7 @@ body {
   margin-bottom: 1em;
 }
 
-.nav {
+.get-started {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -62,24 +62,31 @@ body {
   text-transform: uppercase;
 }
 
-.nav:hover {
-  cursor: pointer;
-  background-color: #751c7c;
-}
-
-.nav:hover a {
-  color: white;
-}
-
-.nav-link {
-  border: 2px solid #751c7c;
-}
-
-.nav-link > a {
+.get-started > a {
   padding: 0.5em;
   display: inline-block;
   text-decoration: none;
   color: #751c7c;
+  border: 2px solid #751c7c;
+}
+
+.get-started:hover {
+  cursor: pointer;
+  background-color: #751c7c;
+}
+
+.get-started:hover a {
+  color: white;
+}
+
+.codesandbox {
+  margin-top: 1em;
+  color: #751c7c;
+  text-decoration: none;
+}
+
+.codesandbox:hover {
+  text-decoration: underline;
 }
 
 .code-block {
